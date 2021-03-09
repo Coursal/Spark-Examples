@@ -11,7 +11,10 @@ Each project comes with its very own input data (`.csv` files in the project fol
 
 The projects featured in this repo are:
 
-#### [Bank Transfer](https://github.com/Coursal/Spark-Examples/tree/main/BankTransfers)
+#### [AvgPrice](https://github.com/Coursal/Spark-Examples/tree/main/AvgPrice)
+Calculating the average price of houses for sale by zipcode.
+
+#### [BankTransfers](https://github.com/Coursal/Spark-Examples/tree/main/BankTransfers)
 A typical "sum-it-up" example where for each bank we calculate the number and the sum of its transfers.
 
 #### [MaxTemp](https://github.com/Coursal/Spark-Examples/tree/main/MaxTemp)
