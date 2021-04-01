@@ -4,7 +4,8 @@ Some simple, kinda introductory projects based on Apache Spark to be used as gui
 ## Preparations & Prerequisites
 * [Latest stable version](https://spark.apache.org/docs/latest/) of Spark or at least the one used here, [3.0.1](https://spark.apache.org/docs/3.0.1/).
 *  A single node setup is enough. You can also use the applications in a local cluster or in a cloud service, with needed changes on anything to be parallelized, of course.
-* Of course, having (a somehow recent version of) Scala (and Java) installed. The most casual and convenient way is to load and build everything within a IDE as shown [here](https://sparkbyexamples.com/spark/spark-setup-run-with-scala-intellij/).
+* Of course, having (a somehow recent version of) Scala (and Java) installed. 
+* The most casual and convenient way to run the projects is to import them to a IDE as shown [here](https://sparkbyexamples.com/spark/spark-setup-run-with-scala-intellij/).
 
 ## Projects
 Each project comes with its very own input data (`.csv` files in the project folder ready to be used or copied to the HDFS) and its execution results are either stored as a single file in an `/output` directory or printed in console. You should also set the full paths for the input and output folders for each project based on your system.
@@ -34,6 +35,9 @@ The most challenging and abstract one. Every key-character (`A`-`E`) has 3 numbe
 
 #### [SymDiff](https://github.com/Coursal/Spark-Examples/tree/main/SymDiff)
 A simple way to calculate the symmetric difference between the records of two files, based on each record's ID.
+
+#### [PatientFilter](https://github.com/Coursal/Spark-Examples/tree/main/PatientFilter)
+Filtering out patients' records where their `PatientCycleNum` column is equal to `1` and their `Counseling` column is equal to `No`.
 
 ---
 
