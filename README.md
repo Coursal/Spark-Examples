@@ -39,6 +39,9 @@ A simple way to calculate the symmetric difference between the records of two fi
 #### [PatientFilter](https://github.com/Coursal/Spark-Examples/tree/main/PatientFilter)
 Filtering out patients' records where their `PatientCycleNum` column is equal to `1` and their `Counseling` column is equal to `No`.
 
+#### [ReadFolderFiles](https://github.com/Coursal/Spark-Examples/tree/main/ReadFolderFiles)
+Reading a number of files with multiple lines and storing each of them as records in a DataFrame consisting of two columns, `filename` and `content`.
+
 ---
 
 _Check out the equivalent **Hadoop Examples** [here](https://github.com/Coursal/Hadoop-Examples)._
