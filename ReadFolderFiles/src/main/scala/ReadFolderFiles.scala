@@ -10,7 +10,7 @@ object ReadFolderFiles
 
         val spark = SparkSession.builder.config(conf).getOrCreate()
 
-		    val sc = spark.sparkContext
+        val sc = spark.sparkContext
 
         // create an RDD where the full path of each file is the key and the file's content is the value,
         // and get rid of the full path of the file to only set the actual name of each file
