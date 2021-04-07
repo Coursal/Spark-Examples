@@ -22,7 +22,7 @@ A typical "sum-it-up" example where for each bank we calculate the number and th
 Typical case of finding the max recorded temperature for every city.
 
 #### [Medals](https://github.com/Coursal/Spark-Examples/tree/main/Medals)
-An interesting application of working on Olympic game stats  in order to see the total wins of gold, silver, and bronze medals of every athlete.
+An interesting application of working on Olympic game stats in order to see the total wins of gold, silver, and bronze medals of every athlete.
 
 #### [NormGrades](https://github.com/Coursal/Spark-Examples/tree/main/NormGrades)
 Just a plain old normalization example for a bunch of students and their grades.
@@ -41,6 +41,9 @@ Filtering out patients' records where their `PatientCycleNum` column is equal to
 
 #### [ReadFolderFiles](https://github.com/Coursal/Spark-Examples/tree/main/ReadFolderFiles)
 Reading a number of files with multiple lines and storing each of them as records in a DataFrame consisting of two columns, `filename` and `content`.
+
+#### [MaxTF](https://github.com/Coursal/Spark-Examples/tree/main/MaxTF)
+The most challenging yet. Τerm frequency is being calculated from 5 input documents. The goal is to find the document with the max TF for each word and how many documents contain that said word.
 
 ---
 
