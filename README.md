@@ -2,13 +2,13 @@
 Some simple, kinda introductory projects based on Apache Spark to be used as guides in order to make the whole DataFrame data management look less weird or complex.
 
 ## Preparations & Prerequisites
-* [Latest stable version](https://spark.apache.org/docs/latest/) of Spark or at least the one used here, [3.0.1](https://spark.apache.org/docs/3.0.1/).
+* [Latest stable version](https://spark.apache.org/docs/latest/) of Spark or at least the one used here, [3.0.1](https://spark.apache.org/docs/3.0.1/) (in case you're old school).
 *  A single node setup is enough. You can also use the applications in a local cluster or in a cloud service, with needed changes on anything to be parallelized, of course.
-* Of course, having (a somehow recent version of) Scala (and Java) installed. 
+* Of course, having (a somehow recent version of) Scala (and Java) installed (oh, you're _really_ old school). 
 * The most casual and convenient way to run the projects is to import them to a IDE as shown [here](https://sparkbyexamples.com/spark/spark-setup-run-with-scala-intellij/).
 
 ## Projects
-Each project comes with its very own input data (`.csv` files in the project folder ready to be used or copied to the HDFS) and its execution results are either stored as a single file in an `/output` directory or printed in console. You should also set the full paths for the input and output folders for each project based on your system.
+Each project comes with its very own input data (`.csv`, `.tsv`, or simple text files in the project folder ready to be used or copied to the HDFS) and its execution results are either stored as a single file in an `/output` directory or printed in console. You should also set the full paths for the input and output folders for each project based on your system.
 
 The projects featured in this repo are:
 
@@ -44,6 +44,10 @@ Reading a number of files with multiple lines and storing each of them as record
 
 #### [MaxTF](https://github.com/Coursal/Spark-Examples/tree/main/MaxTF)
 The most challenging yet. Τerm frequency is being calculated from 5 input documents. The goal is to find the document with the max TF for each word and how many documents contain that said word.
+
+
+#### [TopWords](https://github.com/Coursal/Spark-Examples/tree/main/TopWords)
+A simple merge of `WordCount` and `TopN` examples to find the 10 most used words in 5 input documents.
 
 ---
 
