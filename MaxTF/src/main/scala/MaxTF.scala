@@ -10,7 +10,7 @@ object MaxTF
 
         val spark = SparkSession.builder.config(conf).getOrCreate()
 
-		val sc = spark.sparkContext
+	val sc = spark.sparkContext
 
         // create an RDD where the full path of each doc is the key and the doc's content is the value,
         // and get rid of the full path of the doc to only set the actual name of each file,
