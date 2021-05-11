@@ -6,14 +6,14 @@ object TopWords
 {
     def main(args: Array[String]): Unit =
     {
-        val conf = new SparkConf().setAppName("Top N Word Count").setMaster("local")
+        val conf = new SparkConf().setAppName("TopN WordCount").setMaster("local")
 
         val spark = SparkSession.builder.config(conf).getOrCreate()
 
         val sc = spark.sparkContext
 
         // cleanup/split the text from the docs, map each word as (word, 1), and reduce by key
-        val wordcount = sc.textFile("file:///path/to/project/folder/TopWords/metamorphosis/*")
+        val wordcount = sc.textFile("file://" + System.getProperty("user.dir") + "/metamorphosis/*")
           .flatMap(text => text.replaceAll("\\d+", "")
                                 .replaceAll("[^a-zA-Z ]", " ")
                                 .toLowerCase()
@@ -30,6 +30,6 @@ object TopWords
           .write
           .mode(SaveMode.Overwrite)
           .option("header", "true")
-          .csv("file:///path/to/project/folder/TopWords/output")
+          .csv("file://" + System.getProperty("user.dir") + "/output")
     }
 }

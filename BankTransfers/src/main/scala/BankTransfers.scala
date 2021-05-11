@@ -11,13 +11,13 @@ object BankTransfers
         val spark = SparkSession.builder.config(conf).getOrCreate()
 
         val input_df = spark.read.option("header", "true").option("delimiter", " ")
-          .csv("file:///path/to/project/folder/BankTransfers/bank_dataset/transfers.csv")
+          .csv("file://" + System.getProperty("user.dir") + "/bank_dataset/transfers.csv")
           .groupBy("Bank")
           .agg(count("Bank").as("Num of Transfers"), sum("Amount").as("Total"))
           .repartition(1)   // save output to a single file
           .write
           .mode(SaveMode.Overwrite)
           .option("header", "true")
-          .csv("file:///path/to/project/folder/BankTransfers//output")
+          .csv("file://" + System.getProperty("user.dir") + "/output")
     }
 }

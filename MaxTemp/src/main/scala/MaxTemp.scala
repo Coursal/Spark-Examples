@@ -12,7 +12,7 @@ object MaxTemp
         val spark = SparkSession.builder.config(conf).getOrCreate()
 
         val input_df = spark.read.option("header", "true").option("delimiter", ", ")
-          .csv("file:///path/to/project/folder/MaxTemp/temperatures/temperatures.csv")
+          .csv("file://" + System.getProperty("user.dir") + "/temperatures/temperatures.csv")
           .groupBy("City")
           .agg(collect_list("Temperature").as("Temp_list"),
               max("Temperature").as("MaxTemp"))
@@ -21,6 +21,6 @@ object MaxTemp
           .write
           .mode(SaveMode.Overwrite)
           .option("header", "true")
-          .csv("file:///path/to/project/folder/MaxTemp/output")
+          .csv("file://" + System.getProperty("user.dir") + "/output")
     }
 }

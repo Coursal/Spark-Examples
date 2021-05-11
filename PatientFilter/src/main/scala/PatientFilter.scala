@@ -15,7 +15,7 @@ object PatientFilter
         // and use this new column to filter out the records with one cycle
         // and no counseling
         val input = spark.read.option("header", "true").option("delimiter", ", ")
-          .csv("file:///path/to/project/folder/PatientFilter/patients/patients.csv")
+          .csv("file://" + System.getProperty("user.dir") + "/patients/patients.csv")
           .withColumn("CyclesAndCounseling",
               concat_ws(" ", col("PatientCycleNum"), col("Counseling"))
                 .as("CyclesAndCounseling"))
@@ -25,6 +25,6 @@ object PatientFilter
           .write
           .mode(SaveMode.Overwrite)
           .option("header", "true")
-          .csv("file:///path/to/project/folder/PatientFilter/output")
+          .csv("file://" + System.getProperty("user.dir") + "/output")
     }
 }

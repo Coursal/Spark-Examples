@@ -13,9 +13,9 @@ object ScoreComp
 
         // read the input csv file and cast the "Num" column with double values, aggregate by character, calculate the
         // sum of the negative "Num" values and retrieve the single positive "Num value, before calculating the score
-        // of each character based on the following expression: score == positive_num / (-1 * sum_of_negative_nums)
+        // of each character based on the following expression: score = positive_num / (-1 * sum_of_negative_nums)
         val input_df = spark.read.option("header", "true").option("delimiter", " ")
-          .csv("file:///path/to/project/folder/ScoreComp/input/input.csv")
+          .csv("file://" + System.getProperty("user.dir") + "/input/input.csv")
           .withColumn("Num", col("Num").cast(DoubleType))
           .groupBy("Character")
           .agg(sum(when(col("Num") < 0, col("Num"))).as("NegSum"),
@@ -26,6 +26,6 @@ object ScoreComp
           .write
           .mode(SaveMode.Overwrite)
           .option("header", "true")
-          .csv("file:///path/to/project/folder/ScoreComp/output")
+          .csv("file://" + System.getProperty("user.dir") + "/output")
     }
 }
