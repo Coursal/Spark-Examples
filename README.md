@@ -8,7 +8,7 @@ Some simple, kinda introductory projects based on Apache Spark to be used as gui
 * The most casual and convenient way to run the projects is to import them to a IDE as shown [here](https://sparkbyexamples.com/spark/spark-setup-run-with-scala-intellij/).
 
 ## Projects
-Each project comes with its very own input data (`.csv`, `.tsv`, or simple text files in the project folder ready to be used or copied to the HDFS) and its execution results are either stored as a single file in an `/output` directory or printed in console. You should also set the full paths for the input and output folders for each project based on your system.
+Each project comes with its very own input data (`.csv`, `.tsv`, or simple text files in the project folder ready to be used or copied to the HDFS) and its execution results are either stored as a single file in an `/output` directory or printed in console.
 
 The projects featured in this repo are:
 
