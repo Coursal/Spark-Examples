@@ -14,7 +14,7 @@ object ReadFolderFiles
 
         // create an RDD where the full path of each file is the key and the file's content is the value,
         // and get rid of the full path of the file to only set the actual name of each file
-        val input = sc.wholeTextFiles("file:///path/to/project/folder/ReadFolderFiles/alphabet_dir/*")
+        val input = sc.wholeTextFiles("file://" + System.getProperty("user.dir") + "/alphabet_dir/*")
           .map(file => (file._1.split('/').last, file._2))
 
         // convert the RDD to a DataFrame and explicitly name the columns
@@ -24,6 +24,6 @@ object ReadFolderFiles
           .repartition(1)   // save output to a single file
           .write
           .mode(SaveMode.Overwrite)
-          .csv("file:///path/to/project/folder/ReadFolderFiles/output")
+          .csv("file://" + System.getProperty("user.dir") + "/output")
     }
 }

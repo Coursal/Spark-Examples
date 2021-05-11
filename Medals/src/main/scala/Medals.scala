@@ -11,7 +11,7 @@ object Medals
         val spark = SparkSession.builder.config(conf).getOrCreate()
 
         val input_df = spark.read.option("header", "true")
-          .csv("file:///path/to/project/folder/Medals/olympic_stats/athletes.csv")
+          .csv("file://" + System.getProperty("user.dir") + "/olympic_stats/athletes.csv")
           .groupBy("nationality", "sport")
           .agg(collect_list("gold").as("gold_list"),
               collect_list("silver").as("silver_list"),
@@ -24,6 +24,6 @@ object Medals
           .write
           .mode(SaveMode.Overwrite)
           .option("header", "true")
-          .csv("file:///path/to/project/folder/Medals/output")
+          .csv("file://" + System.getProperty("user.dir") + "/output")
     }
 }

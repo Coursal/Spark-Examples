@@ -15,7 +15,7 @@ object MaxTF
         // create an RDD where the full path of each doc is the key and the doc's content is the value,
         // and get rid of the full path of the doc to only set the actual name of each file,
         // while cleaning up the doc's text
-        val input = sc.wholeTextFiles("file:///path/to/project/folder/MaxTF/metamorphosis/*")
+        val input = sc.wholeTextFiles("file://" + System.getProperty("user.dir") + "/metamorphosis/*")
           .map(file => (file._1.split('/').last, file._2.replaceAll("\\d+", "")
                                                         .replaceAll("[^a-zA-Z ]", " ")
                                                         .toLowerCase()
@@ -54,6 +54,6 @@ object MaxTF
           .write
           .mode(SaveMode.Overwrite)
           .option("header", "true")
-          .csv("file:///path/to/project/folder/MaxTF/output")
+          .csv("file://" + System.getProperty("user.dir") + "/output")
     }
 }

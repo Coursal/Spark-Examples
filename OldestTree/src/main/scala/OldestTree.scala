@@ -12,7 +12,7 @@ object OldestTree
         val spark = SparkSession.builder.config(conf).getOrCreate()
 
         val oldest_tree = spark.read.option("header", "true")
-          .csv("file:///path/to/project/folder/OldestTree/trees/trees.csv")
+          .csv("file://" + System.getProperty("user.dir") + "/trees/trees.csv")
           .withColumn("age_of_tree",col("age_of_tree").cast(IntegerType))
           .orderBy(desc("age_of_tree"))
           .take(1)
